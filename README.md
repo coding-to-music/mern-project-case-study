@@ -1,4 +1,8 @@
-## Project Case study MERN app to document apps
+## Project Case study MERN app to document apps calling GitHub API
+
+The note taking functionality does not work.
+
+Search for text and the GitHub API returns data that are displayed using cards.
 
 ## mern-project-case-study
 
@@ -12,15 +16,81 @@ https://github.com/pramit-marattha/mern-project-case-study-app
 
 ## Installation:
 
-## Modify server.index.js
+## Modify server/index.js
 
-````java
+```java
 app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
-```java
+```
 
+### Project Directory Structure
+
+```java
+tree -d -L 2
+.
+├── client
+│   ├── build
+│   ├── node_modules
+│   ├── public
+│   └── src
+├── node_modules
+└── server
+    ├── controllers
+    ├── database
+    ├── models
+    └── routes
+```
+
+### Package.json
+
+key items in package.json
+
+- cacheDirectories for Heroku to save time on builds
+
+- engine set the node version to use
+
+main scripts
+
+- install
+- build
+- start
+- deploy
+
+```java
+{
+  "name": "project-case-study-mern-server",
+  "version": "1.0.0",
+  "description": "take notes while exploring projects",
+  "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server",
+    "build": "cd client/ && npm install && npm run build",
+    "watch": "nodemon server",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku",
+    "install:client": "cd client && npm install --production=false",
+    "build:client": "cd client && npm run build",
+    "install:server": "npm install --production=false",
+    "install:server:client": "concurrently \"npm install --production=false\" \"npm install:client\"  \"npm install:server\"",
+    "start:client": "cd client && npm run start",
+    "start:server": "npm run start",
+    "start:all": "concurrently \"npm run start:client\" \"npm run start:server\""
+  },
+  "keywords": [
+    "mern"
+  ],
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ]
+}
+```
 
 ### GitHub
 
@@ -42,7 +112,13 @@ git push -u origin main
 heroku create mern-project-case-study
 
 heroku run npx browserslist@latest --update-db
-````
+```
+
+### .env MongoDB Environment Variables
+
+```java
+MONGODB_URI="mongodb+srv://<userid>:<password>@cluster0.zadqe.mongodb.net/mern-project-case-study?retryWrites=true&w=majority"
+```
 
 ### Heroku MongoDB Environment Variables
 
