@@ -27,10 +27,26 @@ web: npm run start:client
 ## Modify server/index.js
 
 ```java
-app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
+// dotenv config
+require("dotenv").config();
+
+// app and port config
+const app = express();
+const port = process.env.PORT || 4000;
 
 // Priority serve any static files.
-app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
+app.use(express.static(path.resolve(__dirname, "../client/build")));
+
+// Answer API requests.
+app.get("/api", function (req, res) {
+  res.set("Content-Type", "application/json");
+  res.send('{"message":"Hello from the custom server!"}');
+});
+
+// All remaining requests return the React app, so it can handle routing.
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+});
 ```
 
 ### Project Directory Structure
