@@ -13,7 +13,7 @@
     "watch": "nodemon server",
     "deploy": "git add . && git commit -m Heroku && git push && git push heroku",
     "install:client": "cd client && npm install --production=false",
-    "build:client": "cd client && npm build",
+    "build:client": "cd client && npm run build",
     "install:server": "npm install --production=false",
     "install:server:client": "concurrently \"npm install --production=false\" \"npm install:client\"  \"npm install:server\"",
     "start:client": "cd client && npm run start",
