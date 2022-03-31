@@ -12,6 +12,16 @@ https://github.com/pramit-marattha/mern-project-case-study-app
 
 ## Installation:
 
+## Modify server.index.js
+
+````java
+app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
+
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, "../react-ui/build")));
+```java
+
+
 ### GitHub
 
 ```java
@@ -30,7 +40,9 @@ git push -u origin main
 
 ```java
 heroku create mern-project-case-study
-```
+
+heroku run npx browserslist@latest --update-db
+````
 
 ### Heroku MongoDB Environment Variables
 
@@ -109,17 +121,9 @@ git push heroku
 Attempted this:
 
 ```java
-heroku config:set JS_RUNTIME_TARGET_BUNDLE=/client/build/static/js/*.js
+heroku config:set JS_RUNTIME_TARGET_BUNDLE=./client/build/static/js/*.js
 
-# or try this
-
-heroku config:set JS_RUNTIME_TARGET_BUNDLE=/build/static/js/*.js
-
-# or try this
-
-heroku config:set JS_RUNTIME_TARGET_BUNDLE=/build/static/*.js
-
-heroku run npm i tree && tree -d -L 1
+heroku run npx browserslist@latest --update-db
 
 heroku run npm i tree && tree -d -L 2
 
