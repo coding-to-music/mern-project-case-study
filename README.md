@@ -16,6 +16,14 @@ https://github.com/pramit-marattha/mern-project-case-study-app
 
 ## Installation:
 
+## Procfile for however to start the Client
+
+Procfile
+
+```java
+web: npm run start:client
+```
+
 ## Modify server/index.js
 
 ```java
@@ -52,6 +60,8 @@ key items in package.json
 - engine set the node version to use
 
 main scripts
+
+`npm run` and any of the scripts below:
 
 - install
 - build
