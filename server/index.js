@@ -13,8 +13,6 @@ require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 4000;
 
-app.use(express.static(path.resolve(__dirname, "../client/build")));
-
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, "../client/build")));
 
