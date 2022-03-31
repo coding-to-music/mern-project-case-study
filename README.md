@@ -15,6 +15,8 @@ https://github.com/pramit-marattha/mern-project-case-study-app
 ### GitHub
 
 ```java
+nvm use v16
+npx browserslist@latest --update-db
 git init
 git add .
 git remote remove origin
