@@ -11,7 +11,14 @@
     "start": "node server",
     "build": "cd client/ && npm install && npm run build",
     "watch": "nodemon server",
-    "deploy": "git add . && git commit -m Heroku && git push && git push heroku"
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku",
+    "install:client": "cd client && npm install --production=false",
+    "build:client": "cd client && npm build",
+    "install:server": "npm install --production=false",
+    "install:server:client": "concurrently \"npm install --production=false\" \"npm install:client\"  \"npm install:server\"",
+    "start:client": "cd client && npm run start",
+    "start:server": "npm run start",
+    "start:all": "concurrently \"npm run start:client\" \"npm run start:server\""
   },
   "keywords": [
     "mern"

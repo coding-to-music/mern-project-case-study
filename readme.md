@@ -1,39 +1,39 @@
 ## Project Case study MERN app to document apps
 
-## project-case-study-mern-app
+## mern-project-case-study
 
-https://github.com/coding-to-music/project-case-study-mern-app
+https://github.com/coding-to-music/mern-project-case-study
 
-https://project-case-study-mern-app.herokuapp.com/
+https://mern-project-case-study.herokuapp.com/
 
 By pramitmarattha pramit-marattha https://github.com/pramit-marattha
 
-https://github.com/pramit-marattha/project-case-study-mern-app
+https://github.com/pramit-marattha/mern-project-case-study-app
 
 ## Installation:
 
 ### GitHub
 
 ```java
- git init
- git add .
- git remote remove origin
- git commit -m "first commit"
- git branch -M main
- git remote add origin git@github.com:coding-to-music/project-case-study-mern-app.git
- git push -u origin main
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/mern-project-case-study.git
+git push -u origin main
 ```
 
 ### Heroku
 
 ```java
-heroku create project-case-study-mern-app
+heroku create mern-project-case-study
 ```
 
 ### Heroku MongoDB Environment Variables
 
 ```java
-heroku config:set MONGODB_URI="mongodb+srv://<userid>:<password>@cluster0.zadqe.mongodb.net/project-case-study-mern-app?retryWrites=true&w=majority"
+heroku config:set MONGODB_URI="mongodb+srv://<userid>:<password>@cluster0.zadqe.mongodb.net/mern-project-case-study?retryWrites=true&w=majority"
 git push heroku
 ```
 
@@ -64,7 +64,7 @@ heroku buildpacks:add mars/create-react-app
 Output:
 
 ```java
-Buildpack added. Next release on project-case-study-mern-app will use:
+Buildpack added. Next release on mern-project-case-study will use:
   1. heroku/nodejs
   2. mars/create-react-app
 Run git push heroku main to create a new release using these buildpacks.
@@ -85,7 +85,7 @@ heroku buildpacks
 Output:
 
 ```java
-=== project-case-study-mern-app Buildpack URLs
+=== mern-project-case-study Buildpack URLs
 1. mars/create-react-app
 2. heroku/nodejs
 ```
