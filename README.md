@@ -108,6 +108,11 @@ Attempted this:
 
 ```java
 heroku config:set JS_RUNTIME_TARGET_BUNDLE=/client/build/static/js/*.js
+
+# or try this
+
+heroku config:set JS_RUNTIME_TARGET_BUNDLE=/build/static/js/*.js
+
 ```
 
 ## Local Development
