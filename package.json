@@ -1,11 +1,17 @@
 {
-  "name": "server",
+  "name": "project-case-study-mern-app",
   "version": "1.0.0",
   "description": "take notes while exploring projects",
   "main": "index.js",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "node server",
+    "build": "cd client/ && npm install && npm run build",
+    "watch": "nodemon server",
+    "deploy": "git add . && git commit -m Heroku && git push && git push heroku"
   },
   "keywords": [
     "mern"
@@ -14,11 +20,16 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "concurrently": "^7.0.0",
     "cors": "^2.8.5",
     "dotenv": "^8.6.0",
     "express": "^4.17.1",
     "mongoose": "^5.13.13",
     "nodemon": "^2.0.15",
     "pusher": "^4.0.2"
-  }
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+  ]
 }

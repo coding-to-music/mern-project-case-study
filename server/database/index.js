@@ -1,16 +1,15 @@
-const mongoose = require('mongoose');
-require('dotenv').config();
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-
-mongoose.connect(process.env.MONGO_DB_URL, {
+mongoose
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    }).catch(e => {
-        console.error('Error while connecting to the database', e.message)
-    })
+  })
+  .catch((e) => {
+    console.error("Error while connecting to the database", e.message);
+  });
 
-const Database = mongoose.connection
+const Database = mongoose.connection;
 
 module.exports = Database;
-
-
